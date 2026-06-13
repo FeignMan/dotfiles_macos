@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Icon overlay cache
+Icon
+
+# Installer debris
+Installer*.log
+Installer*.csv
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+.DS_Store
+*.bak
+
+# Environment / secrets
+.env
+.env.*
+
+# Shell history / local state
+.zsh_history
+*.pid
