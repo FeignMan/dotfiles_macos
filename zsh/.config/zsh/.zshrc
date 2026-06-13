@@ -117,11 +117,20 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-# Configure fzf.
+# FZF defaults (file-based, sourced by fzf from: ~/.config/fzf/config)
 export FZF_DEFAULT_COMMAND="rg --files --follow --hidden --glob '!.git'"
-export FZF_DEFAULT_OPTS="--highlight-line --info=inline-right --ansi --layout=reverse --border=none"
-export FZF_CTRL_T_OPTS="--preview='less {}' --height=100% --bind shift-up:preview-page-up,shift-down:preview-page-down"
-[ -f ~/.local/share/fzf/.fzf.zsh ] && source ~/.local/share/fzf/.fzf.zsh
+
+# FZF_CTRL_R_OPTS — history search via Ctrl+R.
+export FZF_CTRL_R_OPTS='--bind "ctrl-e:execute-silent(echo -n )+abort" --header "Ctrl+E to copy"'
+
+# FZF_CTRL_T_OPTS — file picker via Ctrl+T.
+export FZF_CTRL_T_OPTS='--preview "bat --style=plain --color=always {} --number 1000 | head -30" --height=100% --bind "alt-a:select-all,alt-u:deselect-all,ctrl-/:transform-query:strupr"'
+
+# FZF_ALT_C_OPTS — directory picker via Alt+C (fzf-tab handles this too, but this is the fallback).
+export FZF_ALT_C_OPTS='--preview "eza --color=always -a --tree --icons --level=2 {}"'
+
+# Source fzf shell bindings (completions, key bindings, etc.).
+source <(fzf --zsh)
 
 # fnm: Fast Node Manager
 command -v fnm | eval "$(fnm env)"
