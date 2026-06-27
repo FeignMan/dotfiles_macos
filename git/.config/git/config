@@ -1,0 +1,7 @@
+[user]
+	email = ishanaditya@gmail.com
+	name = Ishan Aditya
+[push]
+	autoSetupRemote = true
+[credential]
+	helper = osxkeychain
