@@ -1,6 +1,7 @@
 {
-  "theme": "dark",
   "env": {
-      "CLAUDE_CODE_ATTRIBUTION_HEADER": "0"
-    }
+    "CLAUDE_CODE_ATTRIBUTION_HEADER": "0"
+  },
+  "model": "opusplan",
+  "theme": "dark"
 }

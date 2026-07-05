@@ -19,6 +19,22 @@ export PATH="$CARGO_HOME/bin:$PATH"
 
 export EDITOR="code --wait"
 
+export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
+export ANTHROPIC_API_KEY=""
+export ANTHROPIC_DEFAULT_OPUS_MODEL="z-ai/glm-5.2"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="minimax/minimax-m3[512k]"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek/deepseek-v4-flash"
+export CLAUDE_CODE_SUBAGENT_MODEL="minimax/minimax-m3"
+
+load_secrets() {
+	export OPENROUTER_API_KEY="$(rbw get 'OPENROUTER_API_KEY')"
+}
+
+unload_secrets() {
+	unset OPENROUTER_API_KEY
+}
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
