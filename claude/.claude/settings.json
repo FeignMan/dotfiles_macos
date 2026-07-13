@@ -3,5 +3,11 @@
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0"
   },
   "model": "opusplan",
-  "theme": "dark"
+  "theme": "dark",
+  "statusLine": {
+    "type": "command",
+    "command": "ccstatusline",
+    "padding": 0,
+    "refreshInterval": 10
+  }
 }
